@@ -49,7 +49,7 @@ const RegisterForm = () => {
   return (
     <div className="grid  md:grid-cols-2 items-center py-10">
       <PicturePart src="/images/form/Side Image.png" />
-      <div>
+      <div className="pl-20 space-y-8">
         <div>
           <h2 className="text-3xl font-bold tracking-tight text-foreground">
             Create an account
@@ -59,7 +59,7 @@ const RegisterForm = () => {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-4 w-[80%] mx-auto"
+            className="space-y-8 w-[70%] "
           >
             <FormField
               control={form.control}
@@ -83,7 +83,11 @@ const RegisterForm = () => {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input placeholder="Enter your email or phone" {...field} />
+                    <Input
+                      placeholder="Enter your email or phone"
+                      {...field}
+                      className="border-t-0 border-l-0 border-r-0 border-b-2 shadow-none"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -99,28 +103,26 @@ const RegisterForm = () => {
                       placeholder="Enter your password"
                       type="password"
                       {...field}
+                      className="border-t-0 border-l-0 border-r-0 border-b-2 shadow-none"
                     />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <div>
-              <Button type="submit" className="w-full">
+            <div className="space-y-4">
+              <Button type="submit" className="w-full bg-designRedColor">
                 Create Account
               </Button>
-              <Button variant="outline" className="w-full">
+              <Button variant="outline" className="w-full border-[#999999]">
                 Sign in with Google
               </Button>
             </div>
+            <div className="text-center text-sm text-muted-foreground">
+              Already have an account?
+            </div>
           </form>
         </Form>
-        <div className="text-center text-sm text-muted-foreground">
-          Already have an account?{" "}
-          {/* <Link href="#" className="font-medium underline" prefetch={false}>
-            Log in
-          </Link> */}
-        </div>
       </div>
     </div>
   );
