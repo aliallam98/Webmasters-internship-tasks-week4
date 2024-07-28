@@ -16,7 +16,6 @@ import {
 import { Input } from "@/components/ui/input";
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: "This field has to be filled." }).max(50),
   emailOrPassword: z
     .string()
     .min(1, { message: "This field has to be filled." })
@@ -24,17 +23,16 @@ const formSchema = z.object({
   password: z
     .string()
     .min(6, {
-      message: "Password should be 6 chars atleast",
+      message: "This field has to be filled.",
     })
     .max(50),
 });
 
-const RegisterForm = () => {
+const LoginForm = () => {
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
       emailOrPassword: "",
       password: "",
     },
@@ -52,7 +50,7 @@ const RegisterForm = () => {
       <div className="pl-20 space-y-8">
         <div>
           <h2 className="text-3xl font-bold tracking-tight text-foreground">
-            Create an account
+          Login to Exclusive
           </h2>
           <p className="mt-1 text-muted-foreground">Enter your details below</p>
         </div>
@@ -61,22 +59,6 @@ const RegisterForm = () => {
             onSubmit={form.handleSubmit(onSubmit)}
             className="space-y-8 w-[70%] "
           >
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <Input
-                      placeholder="Enter your name"
-                      {...field}
-                      className="border-t-0 border-l-0 border-r-0 border-b-2 shadow-none"
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
             <FormField
               control={form.control}
               name="emailOrPassword"
@@ -112,14 +94,17 @@ const RegisterForm = () => {
             />
             <div className="space-y-4">
               <Button type="submit" className="w-full bg-designRedColor hover:bg-designRedColor/90">
-                Create Account
+                Login
               </Button>
               <Button variant="outline" className="w-full border-[#999999]">
-                Sign in with Google
+                login with Google
               </Button>
             </div>
             <div className="text-center text-sm text-muted-foreground">
-              Already have an account?
+              Don't have account?
+            </div>
+            <div className="text-center text-sm text-designRedColor">
+            Forget Password?
             </div>
           </form>
         </Form>
@@ -128,4 +113,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm;
+export default LoginForm;
