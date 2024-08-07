@@ -2,12 +2,14 @@
 // import LoginForm from "./components/auth/login";
 // import RegisterForm from "./components/auth/register";
 
-import AboutUsPage from "./pages/AboutUsPage";
+import ContactPage from "./pages/ContactPage";
+// import AboutUsPage from "./pages/AboutUsPage";
 
 function App() {
   return (
     <>
-    <AboutUsPage/>
+      {/* <AboutUsPage/> */}
+      <ContactPage />
       {/* <h1 className="text-cyan-700 text-7xl">Home</h1> */}
       {/* <RegisterForm /> */}
       {/* <LoginForm/> */}
