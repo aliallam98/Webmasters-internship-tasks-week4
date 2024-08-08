@@ -3,6 +3,7 @@
 // import RegisterForm from "./components/auth/register";
 
 import MainCart from "./components/cart";
+import NewArrivalSection from "./components/NewArrivalSection";
 
 
 // import ContactPage from "./pages/ContactPage";
@@ -11,7 +12,8 @@ import MainCart from "./components/cart";
 function App() {
   return (
     <>
-    <MainCart/>
+    <NewArrivalSection/>
+    {/* <MainCart/> */}
       {/* <AboutUsPage/> */}
       {/* <ContactPage /> */}
       {/* <h1 className="text-cyan-700 text-7xl">Home</h1> */}

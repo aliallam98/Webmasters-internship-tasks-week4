@@ -1,0 +1,101 @@
+[
+  {
+    "productName": "CANON EOS DSLR camera",
+    "price": 1299,
+    "imageSrc": "/images/products/CANON EOS DSLR camera.png",
+    "rate": 4.5,
+    "stars": 5,
+    "isOnSale": false,
+    "salePercent": 0
+  },
+  {
+    "productName": "GPII Shooter USB Gamepad",
+    "price": 249,
+    "imageSrc": "/images/products/GPII Shooter USB Gamepad.png",
+    "rate": 4.2,
+    "stars": 4,
+    "isOnSale": true,
+    "salePercent": 20
+  },
+  {
+    "productName": "Gucci duffle bag",
+    "price": 999,
+    "imageSrc": "/images/products/Gucci duffle bag.png",
+    "rate": 4.8,
+    "stars": 5,
+    "isOnSale": false,
+    "salePercent": 0
+  },
+  {
+    "productName": "HAVIT HV-G92 Gamepad",
+    "price": 199,
+    "imageSrc": "/images/products/HAVIT HV-G92 Gamepad.png",
+    "rate": 4.1,
+    "stars": 4,
+    "isOnSale": true,
+    "salePercent": 15
+  },
+  {
+    "productName": "he north coat",
+    "price": 299,
+    "imageSrc": "/images/products/he north coat.png",
+    "rate": 4.3,
+    "stars": 4,
+    "isOnSale": false,
+    "salePercent": 0
+  },
+  {
+    "productName": "IPS LCD Gaming Monitor",
+    "price": 399,
+    "imageSrc": "/images/products/IPS LCD Gaming Monitor.png",
+    "rate": 4.7,
+    "stars": 5,
+    "isOnSale": true,
+    "salePercent": 10
+  },
+  {
+    "productName": "K-900 Wired Ke board",
+    "price": 99,
+    "imageSrc": "/images/products/K-900 Wired Ke board.png",
+    "rate": 4.0,
+    "stars": 4,
+    "isOnSale": false,
+    "salePercent": 0
+  },
+  {
+    "productName": "RGB liquid CPU Cooler",
+    "price": 149,
+    "imageSrc": "/images/products/RGB liquid CPU Cooler.png",
+    "rate": 4.6,
+    "stars": 5,
+    "isOnSale": true,
+    "salePercent": 12
+  },
+  {
+    "productName": "S-Series Comfort Chai",
+    "price": 79,
+    "imageSrc": "/images/products/S-Series Comfort Chai.png",
+    "rate": 4.4,
+    "stars": 4,
+    "isOnSale": false,
+    "salePercent": 0
+  },
+  {
+    "productName": "SUS FHD Gaming Lapto",
+    "price": 999,
+    "imageSrc": "/images/products/SUS FHD Gaming Lapto.png",
+    "rate": 4.9,
+    "stars": 5,
+    "isOnSale": true,
+    "salePercent": 18
+  },
+  {
+    "productName": "uilted Satin Jacket",
+    "price": 999,
+    "imageSrc": "/images/products/uilted Satin Jacket.png",
+    "rate": 4.9,
+    "stars": 5,
+    "isOnSale": true,
+    "salePercent": 18
+  }
+]
