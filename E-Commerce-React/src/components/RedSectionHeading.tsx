@@ -1,12 +1,9 @@
-
-
-
-const RedSectionHeading = ({HeadingText}:{HeadingText: string}) => {
+const RedSectionHeading = ({ HeadingText }: { HeadingText: string }) => {
   return (
-    <>
-      <span className="bg-[#db4444] w-5 h-40 rounded-sm" />
-      <h2>{HeadingText}</h2>
-    </>
+    <div className="flex items-center gap-6">
+      <span className="block bg-[#db4444] w-5 h-10 rounded-sm" />
+      <h2 className="text-xl font-semibold text-[#db4444]">{HeadingText}</h2>
+    </div>
   );
 };
 
