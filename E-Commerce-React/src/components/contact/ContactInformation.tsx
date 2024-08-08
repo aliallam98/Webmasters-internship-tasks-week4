@@ -3,7 +3,7 @@ import { Mail, Phone } from "lucide-react";
 const ContactInformation = () => {
   return (
     <div>
-      <div className="border-b space-y-4 pb-10">
+      <div className="border-b border-black space-y-4 pb-10">
         <div className="flex items-center gap-6">
           <span className="grid place-content-center p-1 rounded-full size-10 text-white bg-designRedColor ">
             <Phone  />
