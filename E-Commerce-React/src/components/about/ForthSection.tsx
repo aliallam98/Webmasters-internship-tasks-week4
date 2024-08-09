@@ -23,10 +23,10 @@ const sectionData = [
   ];
 const ForthSection = () => {
   return (
-<div className="grid lg:grid-cols-3 gap-16 px-20">
+<div className="grid lg:grid-cols-3 gap-16 px-20 py-10 md:py-20">
       {sectionData.map((item, i) => (
         <div
-          className="flex flex-col items-center justify-center gap-4 p-4 hover:bg-[#db4444] border border-[#3b3b3b3] rounded-md transition group"
+          className="flex flex-col items-center justify-center gap-4 p-4 hover:bg-[#db4444]  rounded-md transition group"
           key={i}
         >
           <div className="p-2 bg-black group-hover:bg-white border-4 rounded-full w-fit  transition border-[#c1c1c1] group-hover:border-[#e67c7c] ">
