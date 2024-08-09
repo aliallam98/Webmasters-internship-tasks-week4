@@ -3,6 +3,29 @@ import FooterScanAndStores from "@/components/footer/FooterScanAndStores";
 import FooterSocialIcons from "@/components/footer/FooterSocialIcons";
 
 
+
+export const navbarLinks =  [ 
+  {
+    heading:"Home",
+    href:"/"
+  },
+  {
+    heading:"Category",
+    href:"/category"
+  },
+  {
+    heading:"products",
+    href:"/products"
+  },
+  {
+    heading:"Contact",
+    href:"/contact"
+  },
+  {
+    heading:"About",
+    href:"/about"
+  },
+]
 export const footerItems = [
   {
     heading: "Exclusive",
