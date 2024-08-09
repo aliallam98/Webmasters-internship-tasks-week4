@@ -1,0 +1,26 @@
+[
+  {
+    "src": "/images/categories/Headphones.png",
+    "name": "Camera"
+  },
+  {
+    "src": "/images/categories/Computers.png",
+    "name": "Computers"
+  },
+  {
+    "src": "/images/categories/Gaming.png",
+    "name": "Gaming"
+  },
+  {
+    "src": "/images/categories/Headphones.png",
+    "name": "Headphones"
+  },
+  {
+    "src": "/images/categories/Phones.png",
+    "name": "Phones"
+  },
+  {
+    "src": "/images/categories/smartwatch.png",
+    "name": "smartwatch"
+  }
+]

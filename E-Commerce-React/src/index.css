@@ -67,3 +67,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+.swiper-pagination .swiper-pagination-bullet{
+  background-color: #db4444 !important
+}
