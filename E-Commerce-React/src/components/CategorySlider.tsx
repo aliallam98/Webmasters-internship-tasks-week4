@@ -10,28 +10,29 @@ import { FreeMode, Pagination } from "swiper/modules";
 import categories from "../constants/Categories.json";
 
 export default function CategorySlider() {
+    const breakpoints = {
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        480: {
+          slidesPerView: 3,
+          spaceBetween: 30
+        },
+        640: {
+          slidesPerView: 4,
+          spaceBetween: 40 
+        },
+        860: {
+          slidesPerView: 5,
+          spaceBetween: 40 
+        },
+      };
   return (
     <>
       <Swiper 
-        slidesPerView={5}
-        spaceBetween={30}
-        breakpoints = {
-            // when window width is >= 320px
-            320: {
-              slidesPerView: 2,
-              spaceBetween: 20
-            },
-            // when window width is >= 480px
-            480: {
-              slidesPerView: 3,
-              spaceBetween: 30
-            },
-            // when window width is >= 640px
-            640: {
-              slidesPerView: 4,
-              spaceBetween: 40
-            }
-          }
+
+        breakpoints = {breakpoints}
         freeMode={true}
         pagination={{
           clickable: true,
