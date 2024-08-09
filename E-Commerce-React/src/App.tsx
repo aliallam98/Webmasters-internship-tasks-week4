@@ -4,6 +4,7 @@
 
 // import MainCart from "./components/cart";
 // import NewArrivalSection from "./components/sections/NewArrivalSection";
+import CheckOut from "./components/checkout";
 import OurProducts from "./components/sections/OurProducts";
 
 // import ContactPage from "./pages/ContactPage";
@@ -12,7 +13,8 @@ import OurProducts from "./components/sections/OurProducts";
 function App() {
   return (
     <>
-    <OurProducts/>
+    <CheckOut/>
+    {/* <OurProducts/> */}
       {/* <NewArrivalSection /> */}
       {/* <MainCart/> */}
       {/* <AboutUsPage/> */}
