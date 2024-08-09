@@ -5,10 +5,10 @@ const LoggedOutActions = () => {
   return (
     <div>
       <Button asChild>
-        <Link to={"/log-in"}>Log In</Link>
+        <Link to={"/login"}>Log In</Link>
       </Button>
       <Button asChild variant={"ghost"}>
-        <Link to={"/sign-up"}>Sign Up</Link>
+        <Link to={"/register"}>Sign Up</Link>
       </Button>
     </div>
   )

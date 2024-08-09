@@ -14,35 +14,48 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Link, useNavigate } from "react-router-dom";
 
 const formSchema = z.object({
-  emailOrPassword: z
+  emailOrPhone: z
     .string()
     .min(1, { message: "This field has to be filled." })
     .email("This is not a valid email."),
   password: z
     .string()
-    .min(6, {
+    .min(1, {
       message: "This field has to be filled.",
     })
     .max(50),
 });
 
 const LoginForm = () => {
-  // 1. Define your form.
+  const navigate = useNavigate();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      emailOrPassword: "",
+      emailOrPhone: "",
       password: "",
     },
   });
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+    const currentUser = JSON.parse(
+      localStorage.getItem("Current-User") as string
+    );
+    const isEmailAndPasswordCorrect =
+      currentUser.emailOrPhone == values.emailOrPhone &&
+      currentUser.password == values.password;
+      console.log(currentUser);
+      console.log(isEmailAndPasswordCorrect);
+      
+    isEmailAndPasswordCorrect
+      ? navigate("/")
+      : form.setError("password", {
+          message: "Email Or Password Is Wrong",
+        });
   }
   return (
     <div className="grid  md:grid-cols-2 items-center py-10">
@@ -50,7 +63,7 @@ const LoginForm = () => {
       <div className="pl-20 space-y-8">
         <div>
           <h2 className="text-3xl font-bold tracking-tight text-foreground">
-          Login to Exclusive
+            Login to Exclusive
           </h2>
           <p className="mt-1 text-muted-foreground">Enter your details below</p>
         </div>
@@ -61,7 +74,7 @@ const LoginForm = () => {
           >
             <FormField
               control={form.control}
-              name="emailOrPassword"
+              name="emailOrPhone"
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
@@ -93,7 +106,10 @@ const LoginForm = () => {
               )}
             />
             <div className="space-y-4">
-              <Button type="submit" className="w-full bg-designRedColor hover:bg-designRedColor/90">
+              <Button
+                type="submit"
+                className="w-full bg-designRedColor hover:bg-designRedColor/90"
+              >
                 Login
               </Button>
               <Button variant="outline" className="w-full border-[#999999]">
@@ -101,10 +117,13 @@ const LoginForm = () => {
               </Button>
             </div>
             <div className="text-center text-sm text-muted-foreground">
-              Don't have account?
+              Don't have account?{" "}
+              <Link className="underline" to={"/register"}>
+                Sign Up
+              </Link>
             </div>
             <div className="text-center text-sm text-designRedColor">
-            Forget Password?
+              Forget Password?
             </div>
           </form>
         </Form>

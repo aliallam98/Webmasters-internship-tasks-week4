@@ -4,7 +4,7 @@ import Logo from "./Logo";
 import NavBarLinks from "./NavBarLinks";
 
 const Header = () => {
-  const isUserLoggedIn = true;
+  const isUserLoggedIn = false;
   return (
     <header className="border-b ">
       <div className="relative bg-black p-2 text-white text-center  flex">

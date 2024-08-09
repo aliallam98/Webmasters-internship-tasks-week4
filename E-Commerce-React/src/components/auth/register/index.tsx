@@ -14,10 +14,11 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Link, useNavigate } from "react-router-dom";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "This field has to be filled." }).max(50),
-  emailOrPassword: z
+  emailOrPhone: z
     .string()
     .min(1, { message: "This field has to be filled." })
     .email("This is not a valid email."),
@@ -30,21 +31,27 @@ const formSchema = z.object({
 });
 
 const RegisterForm = () => {
-  // 1. Define your form.
+  const navigate = useNavigate();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
-      emailOrPassword: "",
+      emailOrPhone: "",
       password: "",
     },
   });
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+    const currentUser = JSON.parse(localStorage.getItem("Current-User") as string)
+    if(currentUser.emailOrPhone !== values.emailOrPhone){
+      localStorage.setItem("Current-User", JSON.stringify(values));
+      navigate("/login");
+    }
+    form.setError("password",{
+      message:"This email already in use"
+    }) 
   }
   return (
     <div className="grid  md:grid-cols-2 items-center py-10">
@@ -79,7 +86,7 @@ const RegisterForm = () => {
             />
             <FormField
               control={form.control}
-              name="emailOrPassword"
+              name="emailOrPhone"
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
@@ -111,7 +118,10 @@ const RegisterForm = () => {
               )}
             />
             <div className="space-y-4">
-              <Button type="submit" className="w-full bg-designRedColor hover:bg-designRedColor/90">
+              <Button
+                type="submit"
+                className="w-full bg-designRedColor hover:bg-designRedColor/90"
+              >
                 Create Account
               </Button>
               <Button variant="outline" className="w-full border-[#999999]">
@@ -119,7 +129,10 @@ const RegisterForm = () => {
               </Button>
             </div>
             <div className="text-center text-sm text-muted-foreground">
-              Already have an account?
+              Already have an account?{" "}
+              <Link className="underline" to={"/login"}>
+                Log In
+              </Link>
             </div>
           </form>
         </Form>
