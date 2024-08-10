@@ -44,12 +44,11 @@ const LoginForm = () => {
   function onSubmit(values: z.infer<typeof formSchema>) {
     const currentUser = JSON.parse(
       localStorage.getItem("Current-User") as string
-    );
+    ) || null
     const isEmailAndPasswordCorrect =
-      currentUser.emailOrPhone == values.emailOrPhone &&
-      currentUser.password == values.password;
-      console.log(currentUser);
-      console.log(isEmailAndPasswordCorrect);
+      currentUser?.emailOrPhone == values.emailOrPhone &&
+      currentUser?.password == values.password;
+
       
     isEmailAndPasswordCorrect
       ? navigate("/")

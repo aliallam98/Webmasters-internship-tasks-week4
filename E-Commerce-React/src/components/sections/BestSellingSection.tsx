@@ -25,6 +25,8 @@ const BestSellingSection = () => {
               productName={product.productName}
               isOnSale={product.isOnSale}
               imageSrc={product.imageSrc}
+              productId = {product.id}
+
             />
           ))}
         </div>

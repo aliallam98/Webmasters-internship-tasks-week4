@@ -45,8 +45,10 @@ const RegisterForm = () => {
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
     const currentUser = JSON.parse(localStorage.getItem("Current-User") as string)
-    if(currentUser.emailOrPhone !== values.emailOrPhone){
+    if(currentUser?.emailOrPhone !== values.emailOrPhone){
       localStorage.setItem("Current-User", JSON.stringify(values));
+      localStorage.setItem("Current-User-Wishlist", JSON.stringify([]));
+      localStorage.setItem("Current-User-Cart", JSON.stringify([]));
       navigate("/login");
     }
     form.setError("password",{

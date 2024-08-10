@@ -2,15 +2,15 @@ import LoggedInActions from "./LoggedInActions";
 import LoggedOutActions from "./LoggedOutActions";
 import Logo from "./Logo";
 import NavBarLinks from "./NavBarLinks";
-
+import CartButton from "./CartButton";
 const Header = () => {
   const isUserLoggedIn = false;
   return (
     <header className="border-b ">
       <div className="relative bg-black p-2 text-white text-center  flex">
         <p className=" w-full ">
-          Summer Sale For All Swim Suits And Free Express Delivery — OFF 
-          50%!  ShopNow{" "}
+          Summer Sale For All Swim Suits And Free Express Delivery — OFF 50%!
+          ShopNow{" "}
         </p>
         <span className="absolute right-32">English</span>
       </div>
@@ -20,9 +20,10 @@ const Header = () => {
           <Logo />
           <NavBarLinks />
         </div>
-        <div>
+        <div className="flex items-center gap-4">
           {!isUserLoggedIn && <LoggedOutActions />}
           {isUserLoggedIn && <LoggedInActions />}
+          <CartButton />
         </div>
       </nav>
     </header>

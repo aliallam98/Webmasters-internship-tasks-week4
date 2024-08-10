@@ -7,22 +7,27 @@ import {
 } from "@/components/ui/card";
 import { useLocation } from "react-router-dom";
 import { Button } from "../ui/button";
-import { Eye, Heart, ShoppingCartIcon, Star, Trash } from "lucide-react";
+import { Eye, Heart, Star, Trash } from "lucide-react";
+import { useCurrentUser } from "@/contexts/CurrentUserContext";
+import AddToCartButton from "../cart/AddToCartButton";
 
 interface IProps {
-  isOnSale: boolean;
-  showRates: boolean;
-  productName: string;
-  imageSrc: string;
+  isOnSale?: boolean;
+  showRates?: boolean;
+  productName?: string;
+  imageSrc?: string;
+  productId?: number;
 }
 const ProductCard = ({
   isOnSale,
   showRates,
   productName,
   imageSrc,
+  productId
 }: IProps) => {
-  // const { pathname } = useLocation();
-  const isWishlistPage = false; //pathname === "/wishlist";
+  const { pathname } = useLocation();
+  const isWishlistPage = pathname === "/wishlist";
+  const isUserLoggedIn = !!useCurrentUser();
 
   const onRemoveFromWishlistHandler = () => {};
 
@@ -47,12 +52,14 @@ const ProductCard = ({
             </Button>
           ) : (
             <div className="absolute right-10 top-4 space-y-2">
-              <Button
-                onClick={() => {}}
-                className="size-10 grid place-content-center bg-white rounded-full  ml-auto text-black hover:bg-transparent"
-              >
-                <Heart />
-              </Button>
+              {isUserLoggedIn && (
+                <Button
+                  onClick={() => {}}
+                  className="size-10 grid place-content-center bg-white rounded-full  ml-auto text-black hover:bg-transparent"
+                >
+                  <Heart />
+                </Button>
+              )}
               <Button
                 onClick={() => {}}
                 className="size-10 grid place-content-center bg-white rounded-full  ml-auto text-black hover:bg-transparent"
@@ -65,9 +72,9 @@ const ProductCard = ({
       </CardHeader>
       <CardContent className="relative bg-[#f5f5f5] grid place-content-center p-4 py-10 overflow-hidden h-[300px]">
         <img src={imageSrc} alt={productName} />
-        <Button className="absolute  transition-transform  -bottom-10 w-full group-hover:bottom-0 rounded-none  ">
-          <ShoppingCartIcon className="mr-4 size-4" /> Add To Cart{" "}
-        </Button>
+        <AddToCartButton 
+        productId={productId!}
+        />
       </CardContent>
       <CardFooter className="p-2 flex flex-col">
         <h3 className="font-semibold w-full">{productName}</h3>

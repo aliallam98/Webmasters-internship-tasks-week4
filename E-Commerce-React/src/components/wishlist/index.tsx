@@ -11,13 +11,15 @@ const index = () => {
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         ([...Array(6)].map((item,i)=
-        <ProductCard isOnSale={true} showRates={true} />
+        <ProductCard isOnSale={true} showRates={true} 
+        />
         ))
       </div>
       <RedSectionHeading HeadingText="Just For You" />
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         ([...Array(6)].map((item,i)=
-        <ProductCard isOnSale={true} showRates={true} />
+        <ProductCard isOnSale={true} showRates={true} 
+        />
         ))
       </div>
     </section>
