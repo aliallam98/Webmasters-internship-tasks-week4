@@ -1,24 +1,23 @@
 import { useState } from "react";
+import { IProduct } from "../typings";
 
 
 interface IProps {
-    productImageSrc : string
-    productName : string
-    productPrice : number
+  product :IProduct
 }
-const CartItem = ({productName,productImageSrc,productPrice}:IProps) => {
-    const [productQuantity,setProductQuantity] = useState(0)
+const CartItem = ({product}:IProps) => {
+    const [productQuantity,setProductQuantity] = useState(product?.quantity)
   return (
-    <div className="flex items-center gap-10">
+    <div className="flex items-center gap-10 gap-40 mt-4 ">
       <div className="flex items-center gap-4">
-        <img src={productImageSrc} alt="product" />
-        <h3>{productName}</h3>
+        <img src={product.imageSrc} alt="product" className="size-20" />
+        <h3>{product.productName}</h3>
       </div>
-      <p>{productPrice}</p>
+      <p>{product.price}</p>
       <input type="number" name="productQuantity" value={productQuantity} onChange={(e)=>setProductQuantity(+e.target.value)}
       className="border p-1 w-[60px]"
       />
-      <p>{productQuantity * productPrice}</p>
+      <p>{productQuantity! * product.price}</p>
     </div>
   )
 };

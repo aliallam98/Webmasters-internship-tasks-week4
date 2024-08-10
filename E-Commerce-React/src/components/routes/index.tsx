@@ -1,5 +1,7 @@
 import App from "@/App";
 import AboutUsPage from "@/pages/AboutUsPage";
+import CartPage from "@/pages/CartPage";
+import CategoriesPage from "@/pages/CategoriesPage";
 import ContactPage from "@/pages/ContactPage";
 import LoginPage from "@/pages/LoginPage";
 import RegisterPage from "@/pages/RegisterPage";
@@ -18,6 +20,14 @@ const router = createBrowserRouter([
     {
       path: "/about",
       element: <AboutUsPage/>,
+    },
+    {
+      path: "/category",
+      element: <CategoriesPage/>,
+    },
+    {
+      path: "/cart",
+      element: <CartPage/>,
     },
     {
       path: "/register",

@@ -1,9 +1,10 @@
 import { ShoppingCart } from "lucide-react";
 import { Button } from "../ui/button";
 import { useCartItemsCount } from "@/contexts/CartItemsCountContext";
+import { Link } from "react-router-dom";
 
 const CartButton = () => {
-  const {cartItemLength} = useCartItemsCount()
+  const { cartItemLength } = useCartItemsCount();
   return (
     <Button className="relative h-fit p-1 md:p-2" variant={"ghost"}>
       <span
@@ -13,7 +14,9 @@ const CartButton = () => {
       >
         {cartItemLength?.length || 0}
       </span>
-      <ShoppingCart />
+      <Link to={"/cart"}>
+        <ShoppingCart />
+      </Link>
     </Button>
   );
 };
