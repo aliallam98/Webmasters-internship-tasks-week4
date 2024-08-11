@@ -2,30 +2,28 @@ import FooterSaleInput from "@/components/footer/FooterSaleInput";
 import FooterScanAndStores from "@/components/footer/FooterScanAndStores";
 import FooterSocialIcons from "@/components/footer/FooterSocialIcons";
 
-
-
-export const navbarLinks =  [ 
+export const navbarLinks = [
   {
-    heading:"Home",
-    href:"/"
+    heading: "Home",
+    href: "/",
   },
   {
-    heading:"Category",
-    href:"/category"
+    heading: "Category",
+    href: "/category",
   },
   {
-    heading:"products",
-    href:"/products"
+    heading: "products",
+    href: "/products",
   },
   {
-    heading:"Contact",
-    href:"/contact"
+    heading: "Contact",
+    href: "/contact",
   },
   {
-    heading:"About",
-    href:"/about"
+    heading: "About",
+    href: "/about",
   },
-]
+];
 export const footerItems = [
   {
     heading: "Exclusive",
@@ -54,8 +52,18 @@ export const footerItems = [
 ];
 
 export const footerSocialIcons = [
-    { src: "/images/footer/Icon-Facebook.png", alt: "Facebook" },
-    { src: "/images/footer/icon-instagram.png", alt: "Instagram" },
-    { src: "/images/footer/Icon-Linkedin.png", alt: "LinkedIn" },
-    { src: "/images/footer/Icon-Twitter.png", alt: "Twitter" }
-  ];
+  { src: "/images/footer/Icon-Facebook.png", alt: "Facebook" },
+  { src: "/images/footer/icon-instagram.png", alt: "Instagram" },
+  { src: "/images/footer/Icon-Linkedin.png", alt: "LinkedIn" },
+  { src: "/images/footer/Icon-Twitter.png", alt: "Twitter" },
+];
+
+export const aboutSliderData = [
+  { name:"Tom Cruise" , position:"Founder & Chairman", src: "/images/about/image 47.png", alt: "person" },
+  { name:"Emma Watson" , position:"Managing Director", src: "/images/about/image 51.png", alt: "person" },
+  { name:"Will Smith" , position:"Product Designer", src: "/images/about/image 46.png", alt: "person" },
+  { name:"Tom Cruise" , position:"Founder & Chairman", src: "/images/about/image 47.png", alt: "person" },
+  { name:"Emma Watson" , position:"Managing Director", src: "/images/about/image 51.png", alt: "person" },
+  { name:"Will Smith" , position:"Product Designer", src: "/images/about/image 46.png", alt: "person" },
+
+];
