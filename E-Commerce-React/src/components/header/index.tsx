@@ -3,8 +3,9 @@ import LoggedOutActions from "./LoggedOutActions";
 import Logo from "./Logo";
 import NavBarLinks from "./NavBarLinks";
 import CartButton from "./CartButton";
+import { useCurrentUser } from "@/contexts/CurrentUserContext";
 const Header = () => {
-  const isUserLoggedIn = false;
+  const isUserLoggedIn = useCurrentUser();
   return (
     <header className="border-b ">
       <div className="relative bg-black p-2 text-white text-center  flex">
