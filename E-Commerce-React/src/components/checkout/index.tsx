@@ -4,6 +4,7 @@ import CheckOutForm from "./CheckOutForm";
 import CheckOutSubtotal from "./CheckOutSubtotal";
 
 const CheckOut = () => {
+
   return (
     <section>
       <div className="container grid lg:grid-cols-2 gap-20">

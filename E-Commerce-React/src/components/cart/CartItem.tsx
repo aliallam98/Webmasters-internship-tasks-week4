@@ -8,10 +8,10 @@ interface IProps {
 const CartItem = ({product}:IProps) => {
     const [productQuantity,setProductQuantity] = useState(product?.quantity)
   return (
-    <div className="flex items-center gap-10 gap-40 mt-4 ">
-      <div className="flex items-center gap-4">
-        <img src={product.imageSrc} alt="product" className="size-20" />
-        <h3>{product.productName}</h3>
+    <div className="flex items-center gap-40  mt-4 ">
+      <div className="flex items-center gap-4 ">
+        <img src={product.imageSrc} alt="product" className="size-12 lg:size-20" />
+        <h3 className="hidden lg:block">{product.productName}</h3>
       </div>
       <p>{product.price}</p>
       <input type="number" name="productQuantity" value={productQuantity} onChange={(e)=>setProductQuantity(+e.target.value)}

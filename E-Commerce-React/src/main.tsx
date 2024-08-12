@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider } from "react-router-dom";
-import router from "./components/routes/index.tsx";
+import router from "./routes/index.tsx";
 import CurrentUserProvider from "./contexts/CurrentUserContext.tsx";
 import { Toaster } from "sonner";
 import CartItemsCountProvider from "./contexts/CartItemsCountContext.tsx";

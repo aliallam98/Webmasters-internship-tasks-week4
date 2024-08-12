@@ -1,9 +1,9 @@
 const headersTitles = ["product", "Price", "Quantity", "Subtotal"];
 const CartHeaders = () => {
   return (
-    <ul className="flex  gap-52">
+    <ul className="flex items-center">
       {headersTitles.map((header, i) => (
-        <li key={i}>{header}</li>
+        <li className="w-[150px] lg:w-[300px]" key={i}>{header}</li>
       ))}
     </ul>
   );
