@@ -7,7 +7,7 @@ import { useWishlist } from "@/contexts/WishlistContext";
 import { cn } from "@/lib/utils";
 import { RefObject } from "react";
 
-const AddToWishlistButton = ({ id ,AddToWishlistRef}: { id: number ,AddToWishlistRef?: RefObject<HTMLButtonElement | undefined>}) => {
+const AddToWishlistButton = ({ id ,AddToWishlistRef}: { id: number ,AddToWishlistRef?: RefObject<HTMLButtonElement>}) => {
   const { wishlist, setWishlist } = useWishlist();
   const productToAdd = products.find((product: any) => product.id == id);
   const isProductAddedToWishlist = wishlist!.findIndex(

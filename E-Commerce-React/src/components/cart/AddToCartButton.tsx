@@ -10,7 +10,7 @@ const AddToCartButton = ({
   AddToCartRef,
 }: {
   productId: number;
-  AddToCartRef?: RefObject<HTMLButtonElement | undefined>;
+  AddToCartRef?: RefObject<HTMLButtonElement>;
 }) => {
   const { setCartItemLength } = useCartItemsCount();
 
