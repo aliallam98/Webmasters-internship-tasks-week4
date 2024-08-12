@@ -5,6 +5,7 @@ import CategoriesPage from "@/pages/CategoriesPage";
 import ContactPage from "@/pages/ContactPage";
 import LoginPage from "@/pages/LoginPage";
 import RegisterPage from "@/pages/RegisterPage";
+import WishlistPage from "@/pages/WishlistPage";
 import { createBrowserRouter } from "react-router-dom";
 
 
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
     {
       path: "/cart",
       element: <CartPage/>,
+    },
+    {
+      path: "/wishlist",
+      element: <WishlistPage/>,
     },
     {
       path: "/register",

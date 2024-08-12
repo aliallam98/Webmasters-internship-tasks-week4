@@ -15,8 +15,6 @@ const AddToWishlistButton = ({ id }: { id: number }) => {
 
 
   const wishlistHandler = (id: number) => {
-  console.log(isProductAddedToWishlist);
-
     if (productToAdd && isProductAddedToWishlist == -1) {
       setWishlist((prev: any) => [...prev, productToAdd]);
       localStorage.setItem("Current-User-Wishlist", JSON.stringify([...wishlist!,productToAdd]));

@@ -6,9 +6,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useLocation } from "react-router-dom";
 import { Button } from "../ui/button";
-import { Eye, Star, Trash } from "lucide-react";
+import { Eye, Star } from "lucide-react";
 import { useCurrentUser } from "@/contexts/CurrentUserContext";
 import AddToCartButton from "../cart/AddToCartButton";
 import AddToWishlistButton from "../wishlist/AddToWishlistButton";
@@ -27,15 +26,12 @@ const ProductCard = ({
   imageSrc,
   productId,
 }: IProps) => {
-  const { pathname } = useLocation();
-  const isWishlistPage = pathname === "/wishlist";
   const isUserLoggedIn = !!useCurrentUser();
-
 
   return (
     <Card className="relative group border-none rounded-md">
       <CardHeader className="absolute  w-full">
-        <CardTitle className="absolute top-4  w-full z-50">
+        <CardTitle className="absolute top-4  w-full z-50 flex items-center ">
           {isOnSale && (
             <Button
               className="bg-[#db4444] block mr-auto"
@@ -43,13 +39,6 @@ const ProductCard = ({
               -35%
             </Button>
           )}
-          {isWishlistPage ? (
-            <Button
-              className="size-5 p-1 bg-white rounded-full block ml-auto hover:bg-transparent"
-            >
-              <Trash />
-            </Button>
-          ) : (
             <div className="absolute right-10 top-4 space-y-2">
               {isUserLoggedIn && <AddToWishlistButton id={productId!} />}
               <Button
@@ -59,7 +48,6 @@ const ProductCard = ({
                 <Eye />
               </Button>
             </div>
-          )}
         </CardTitle>
       </CardHeader>
       <CardContent className="relative bg-[#f5f5f5] grid place-content-center p-4 py-10 overflow-hidden h-[300px]">
