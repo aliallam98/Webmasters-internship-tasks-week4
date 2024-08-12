@@ -6,13 +6,12 @@ import {
   } from "@/components/ui/popover";
   import { CircleUser, LogOut, Settings, User, X } from "lucide-react";
   import { Button } from "../ui/button";
-  import { Link, useLocation, useNavigate } from "react-router-dom";
+  import { Link, useLocation } from "react-router-dom";
 import { Separator } from "../ui/separator";
 import { cn } from "@/lib/utils";
 
   const UserActions = () => {
     const {pathname} = useLocation()
-    const navigate = useNavigate();
     const onClickHandler = async () => {
     };
     return (
