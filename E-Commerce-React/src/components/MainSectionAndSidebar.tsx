@@ -42,7 +42,7 @@ const MainSectionAndSidebar = () => {
                   />
                   iPhone 14 Series
                 </h3>
-                <h1 className="text-xl  md:text-7xl">
+                <h1 className="text-xl  md:text-4xl lg:text-5xl xl:text-7xl">
                   Up to 10% 
                   off Voucher
                 </h1>
@@ -56,6 +56,7 @@ const MainSectionAndSidebar = () => {
               <img
                 src="./images/hero_endframe__cvklg0xk3w6e_large 2.png"
                 alt="hero"
+                className="mx-auto"
               />
             </SwiperSlide>
           ))}
