@@ -13,7 +13,7 @@ export const navbarLinks = [
   },
   {
     heading: "products",
-    href: "/products",
+    href: "/product",
   },
   {
     heading: "Contact",

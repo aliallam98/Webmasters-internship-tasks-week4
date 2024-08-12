@@ -1,6 +1,10 @@
 import React, { createContext, useContext, useState } from "react";
 
-const currentUserContext = createContext({});
+const currentUserContext = createContext({
+  emailOrPhone:"",
+  name:"",
+  password:""
+});
 const CurrentUserProvider = ({ children }: { children: React.ReactNode }) => {
   const [currentUser] = useState(
     JSON.parse(localStorage.getItem("Current-User") as string) || null

@@ -11,6 +11,7 @@ import { Eye, Star } from "lucide-react";
 import { useCurrentUser } from "@/contexts/CurrentUserContext";
 import AddToCartButton from "../cart/AddToCartButton";
 import AddToWishlistButton from "../wishlist/AddToWishlistButton";
+import { Link } from "react-router-dom";
 
 interface IProps {
   isOnSale?: boolean;
@@ -33,25 +34,25 @@ const ProductCard = ({
       <CardHeader className="absolute  w-full">
         <CardTitle className="absolute top-4  w-full z-50 flex items-center ">
           {isOnSale && (
-            <Button
-              className="bg-[#db4444] block mr-auto"
-            >
-              -35%
-            </Button>
+            <Button className="bg-[#db4444] block mr-auto">-35%</Button>
           )}
-            <div className="absolute right-10 top-4 space-y-2">
-              {isUserLoggedIn && <AddToWishlistButton id={productId!} />}
-              <Button
-                onClick={() => {}}
-                className="size-10 grid place-content-center bg-white rounded-full  ml-auto text-black hover:bg-transparent"
-              >
+          <div className="absolute right-10 top-4 space-y-2">
+            {isUserLoggedIn && <AddToWishlistButton id={productId!} />}
+            <Button
+              onClick={() => {}}
+              className="size-10 grid place-content-center bg-white rounded-full  ml-auto text-black hover:bg-transparent"
+            >
+              <Link to={`/product/${productId}`}>
                 <Eye />
-              </Button>
-            </div>
+              </Link>
+            </Button>
+          </div>
         </CardTitle>
       </CardHeader>
       <CardContent className="relative bg-[#f5f5f5] grid place-content-center p-4 py-10 overflow-hidden h-[300px]">
-        <img src={imageSrc} alt={productName} />
+        <Link to={`/product/${productId}`}>
+          <img src={imageSrc} alt={productName} />
+        </Link>
         <AddToCartButton productId={productId!} />
       </CardContent>
       <CardFooter className="p-2 flex flex-col">

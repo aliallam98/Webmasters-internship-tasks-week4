@@ -1,13 +1,13 @@
-import CheckOut from "@/components/checkout";
+import MainProfile from "@/components/profile";
 import { useCurrentUser } from "@/contexts/CurrentUserContext";
 import { Navigate } from "react-router-dom";
 
-const CheckOutPage = () => {
+const ProfilePage = () => {
   const currentUser = useCurrentUser();
   if (!currentUser) {
     return <Navigate to={"/login"} />;
   }
-  return <CheckOut />;
+  return <MainProfile />;
 };
 
-export default CheckOutPage;
+export default ProfilePage;

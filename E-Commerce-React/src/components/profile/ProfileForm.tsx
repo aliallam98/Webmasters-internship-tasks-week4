@@ -10,6 +10,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { useCurrentUser } from "@/contexts/CurrentUserContext";
 
 const formSchema = z.object({
   firstName: z
@@ -36,13 +37,14 @@ const formSchema = z.object({
 });
 
 const ProfileForm = () => {
-  // 1. Define your form.
+  const currentUser = useCurrentUser()
+  console.log(currentUser);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
+      firstName:currentUser.name.split(" ")[0] || "",
+      lastName:currentUser.name.split(" ")[1] ||"",
+      email: currentUser.emailOrPhone || "",
       address: "",
       currentPassword: "",
       newPassword: "",
@@ -58,15 +60,15 @@ const ProfileForm = () => {
   }
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <div className="grid lg:grid-cols-2">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 flex-1 max-w-2xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-10">
           <FormField
             control={form.control}
             name="firstName"
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input placeholder="First Name" {...field} />
+                  <Input className="bg-[#f5f5f5]" placeholder="First Name" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -78,21 +80,21 @@ const ProfileForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input placeholder="Company Name" {...field} />
+                  <Input className="bg-[#f5f5f5]" placeholder="Last Name" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
         </div>
-        <div className="grid lg:grid-cols-2">
+        <div className="grid lg:grid-cols-2 gap-10">
           <FormField
             control={form.control}
             name="email"
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input placeholder="Street Address" {...field} />
+                  <Input className="bg-[#f5f5f5]" placeholder="email" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -104,7 +106,7 @@ const ProfileForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input placeholder="Town/city" {...field} />
+                  <Input className="bg-[#f5f5f5]" placeholder="address" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -118,7 +120,7 @@ const ProfileForm = () => {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input placeholder="Phone Number" {...field} />
+                <Input className="bg-[#f5f5f5]" placeholder="Current Password" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -130,7 +132,7 @@ const ProfileForm = () => {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input placeholder="Phone Number" {...field} />
+                <Input className="bg-[#f5f5f5]" placeholder="New Password" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -142,7 +144,7 @@ const ProfileForm = () => {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input placeholder="Email" {...field} />
+                <Input className="bg-[#f5f5f5]" placeholder="Confirm new password" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

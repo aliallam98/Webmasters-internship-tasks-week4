@@ -7,7 +7,7 @@ const CartTotal = () => {
   const {cartItemLength} = useCartItemsCount()
   const total = cartItemLength?.reduce((acc,current:IProduct)=> acc + current.quantity! * current.price , 0) || 0
   return (
-    <div className="w-[470px] h-[324px] border border-black p-4 flex flex-col justify-around">
+    <div className="w-full  lg:w-[470px] lg:h-[324px] border border-black p-4 flex flex-col justify-around">
       <h2>Cart Total</h2>
       <div className="flex items-center justify-between border-b py-4">
         <span>Subtotal:</span> <span>${total}</span>

@@ -13,7 +13,7 @@ import {
 import { Input } from "@/components/ui/input";
 
 const formSchema = z.object({
-  coupon: z.string().min(2).max(50),
+  coupon: z.string(),
 });
 
 const CartCoupon = () => {
@@ -31,7 +31,7 @@ const CartCoupon = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="space-y-8 flex items-center gap-6 w-[400px] max-w-[400px] h-fit"
+        className="space-y-8 flex items-center gap-6 w-full max-w-[400px] h-fit mb-4 lg:mb-0"
       >
         <FormField
           control={form.control}

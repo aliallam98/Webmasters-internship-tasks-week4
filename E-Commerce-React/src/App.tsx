@@ -1,6 +1,5 @@
 import ForthSection from "./components/about/ForthSection";
-import Footer from "./components/footer";
-import Header from "./components/header";
+import MainSectionAndSidebar from "./components/MainSectionAndSidebar";
 import BestSellingSection from "./components/sections/BestSellingSection";
 import BrowseByCategorySection from "./components/sections/BrowseByCategorySection";
 import FlashSaleSection from "./components/sections/FlashSaleSection";
@@ -11,16 +10,15 @@ import TimerSection from "./components/sections/TimerSection";
 function App() {
   return (
     <>
-    <Header/>
+    <MainSectionAndSidebar/>
       <FlashSaleSection />
-      <BrowseByCategorySection/>
+      <BrowseByCategorySection />
       <BestSellingSection />
       <TimerSection />
       <OurProducts />
       <NewArrivalSection />
       {/* About ForthSection */}
       <ForthSection />
-      <Footer />
     </>
   );
 }

@@ -29,33 +29,33 @@ const FlashSaleTimer = () => {
   }, []);
   return (
     <div className="flex items-center gap-16">
-      <span className="text-3xl font-semibold">Flash Sales</span>
+      <span className="text-xl md:text-3xl font-semibold">Flash Sales</span>
       <div className="text-center flex gap-4">
         <div className="flex gap-4 items-center ">
           <div>
-            <p className="font-bold text-[10px] text-xl">Days</p>
-            <p className="text-xl font-bold">{days}</p>
+            <p className="font-bold text-[8px] md:text-[10px] text-sm md:text-xl">Days</p>
+            <p className="text-sm md:text-xl font-bold">{days}</p>
           </div>
           <span className="text-designRedColor">:</span>
         </div>
         <div className="flex gap-4 items-center ">
           <div>
-            <p className="font-bold text-[10px] text-xl">Hours</p>
-            <p className="text-xl font-bold">{hours}</p>
+            <p className="font-bold text-[8px] md:text-[10px] text-sm md:text-xl">Hours</p>
+            <p className="text-sm md:text-xl font-bold">{hours}</p>
           </div>
           <span className="text-designRedColor">:</span>
         </div>
         <div className="flex gap-4 items-center ">
           <div>
-            <p className="font-bold text-[10px] text-xl">Minutes</p>
-            <p className="text-xl font-bold">{minutes}</p>
+            <p className="font-bold text-[8px] md:text-[10px] text-sm md:text-xl">Minutes</p>
+            <p className="text-sm md:text-xl font-bold">{minutes}</p>
           </div>
           <span className="text-designRedColor">:</span>
         </div>
         <div className="flex gap-4 items-center ">
           <div>
-            <p className="font-bold text-[10px] text-xl">Seconds</p>
-            <p className="text-xl font-bold">{seconds}</p>
+            <p className="font-bold text-[8px] md:text-[10px] text-sm md:text-xl">Seconds</p>
+            <p className="text-sm md:text-xl font-bold">{seconds}</p>
           </div>
         </div>
       </div>

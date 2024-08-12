@@ -33,7 +33,11 @@ const formSchema = z.object({
   email: z.string().min(2, { message: "email must be at least 2 characters." }),
 });
 
-const CheckOutForm = () => {
+const CheckOutForm = ({
+  formButtonRef,
+}: {
+  formButtonRef: React.MutableRefObject<HTMLButtonElement | null>;
+}) => {
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -95,6 +99,18 @@ const CheckOutForm = () => {
         />
         <FormField
           control={form.control}
+          name="apartment"
+          render={({ field }) => (
+            <FormItem>
+              <FormControl>
+                <Input placeholder="apartment" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
           name="townOrCity"
           render={({ field }) => (
             <FormItem>
@@ -129,6 +145,9 @@ const CheckOutForm = () => {
             </FormItem>
           )}
         />
+        <button ref={formButtonRef} type="submit" className="hidden">
+          xxxxxxxxxxx
+        </button>
       </form>
     </Form>
   );

@@ -5,8 +5,9 @@ import products from "../../constants/Prodcuts.json";
 import { toast } from "sonner";
 import { useWishlist } from "@/contexts/WishlistContext";
 import { cn } from "@/lib/utils";
+import { RefObject } from "react";
 
-const AddToWishlistButton = ({ id }: { id: number }) => {
+const AddToWishlistButton = ({ id ,AddToWishlistRef}: { id: number ,AddToWishlistRef?: RefObject<HTMLButtonElement | undefined>}) => {
   const { wishlist, setWishlist } = useWishlist();
   const productToAdd = products.find((product: any) => product.id == id);
   const isProductAddedToWishlist = wishlist!.findIndex(
@@ -33,6 +34,8 @@ const AddToWishlistButton = ({ id }: { id: number }) => {
   };
   return (
     <Button
+    type="button"
+    ref={AddToWishlistRef}
       onClick={() => wishlistHandler(id)}
       className={cn("size-10 grid place-content-center bg-white rounded-full  ml-auto text-black hover:bg-secondary hover:text-black",
         isProductAddedToWishlist !== -1 && "bg-designRedColor  text-white"
