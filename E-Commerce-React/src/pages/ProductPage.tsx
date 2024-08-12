@@ -29,8 +29,8 @@ import { useRef } from "react";
 
 export default function ProductPage() {
   const { id } = useParams();
-  const AddToCartRef = useRef<HTMLButtonElement | undefined>();
-  const AddToWishlistRef = useRef<HTMLButtonElement | undefined>();
+  const AddToCartRef = useRef<HTMLButtonElement >(null);
+  const AddToWishlistRef = useRef<HTMLButtonElement >(null);
   const productToFind = products.find((product: any) => product.id == id!);
   if (!productToFind) {
     return <NotFoundPage />;
